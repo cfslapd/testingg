@@ -30,13 +30,11 @@ AFRAME.registerComponent('vidhandler', {
                src='https://cdn.glitch.com/3d5f1a64-d80e-4a74-852f-82c882e4edd4%2Fsintel_trailer-480p.mp4?v=1568116731427'></video>
       </a-assets>
       <a-marker preset='hiro' vidhandler="video: #vid">
-        <a-video position="0 0 0" material='src: #vid'></a-video>
-        <a-video src="#vid" width="3" height="1.5"></a-video>
+        <a-video src="#vid" width="3" height="1.5" rotation="0 90 0"></a-video>
       </a-marker>
   
       <a-marker preset='kanji' vidhandler="video: #videonew">
-        <a-video position="0 0 0" material='src: #vidnew'></a-video>
-        <a-video src="#vidnew" width="3" height="1.5"></a-video>
+        <a-video src="#vidnew" width="3" height="1.5" rotation="0 90 0"></a-video>
       </a-marker>
   <a-entity camera></a-entity>
 </a-scene>
