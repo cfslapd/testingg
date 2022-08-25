@@ -25,16 +25,16 @@ AFRAME.registerComponent('vidhandler', {
 <a-scene embedded arjs>
       <a-assets>
         <video id="vid" loop="true" crossorigin="anonymous" 
-               src='https://cdn.glitch.com/f8908c29-7a4c-455b-93ca-6172548f04c2%2FBig_Buck_Bunny_Trailer_1080p.ogv.360p.vp9.webm?v=1566582340300'></video>
+               src='assets/video1.mp4'></video>
         <video id="videonew" loop="true" crossorigin="anonymous" 
-               src='https://cdn.glitch.com/3d5f1a64-d80e-4a74-852f-82c882e4edd4%2Fsintel_trailer-480p.mp4?v=1568116731427'></video>
+               src='assets/video2.mp4'></video>
       </a-assets>
-      <a-marker preset='hiro' vidhandler="video: #vid">
-        <a-video src="#vid" width="3" height="1.5" rotation="270 0 0"></a-video>
+      <a-marker type='pattern' url='assets/pattern-IOT_AR_1.patt' vidhandler="video: #vid">
+        <a-video src="#vid" width="3" height="1.75" rotation="270 0 0"></a-video>
       </a-marker>
   
-      <a-marker preset='kanji' vidhandler="video: #videonew">
-        <a-video src="#vidnew" width="3" height="1.5" rotation="270 0 0"></a-video>
+      <a-marker type='pattern' url='assets/pattern-IOT_AR_2.patt' vidhandler="video: #videonew">
+        <a-video src="#vidnew" width="3" height="1.75" rotation="270 0 0"></a-video>
       </a-marker>
   <a-entity camera></a-entity>
 </a-scene>
