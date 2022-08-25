@@ -33,9 +33,9 @@ AFRAME.registerComponent('vidhandler', {
 <a-scene embedded arjs>
       <a-assets>
         <video id="vid" loop="true" crossorigin="anonymous" 
-               src='assets/video1.mp4' playsinline  controls></video>
+               src='assets/video1.mp4' playsinline></video>
         <video id="videonew" loop="true" crossorigin="anonymous" 
-               src='assets/video2.mp4' playsinline  controls></video>
+               src='assets/video2.mp4' playsinline></video>
       </a-assets>
       <a-marker type='pattern' url='assets/pattern-IOT_AR_1.patt' vidhandler="video: #vid">
         <a-video src="#vid" width="3" height="1.75" rotation="270 0 0" webkit-playsinline playsinline></a-video>
