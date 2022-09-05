@@ -22,7 +22,167 @@
     },
   });
 </script>
+<a-scene embedded arjs<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+<script>
+  AFRAME.registerComponent("vidhandler", {
+    schema: {
+      video: { type: "selector" },
+    },
+    init: function () {
+      this.video = this.data.video;
+      this.video.pause();
+    },
+    tick: function () {
+      if (this.el.object3D.visible == true) {
+        if (!this.toggle) {
+          this.toggle = true;
+          this.video.play();
+        }
+      } else {
+        this.toggle = false;
+        this.video.pause();
+      }
+    },
+  });
+</script>
 <a-scene embedded arjs>
+  <a-assets>
+    <video
+      id="vid"
+      loop="true"
+      crossorigin="anonymous"
+      src="assets/video1.mp4"
+    ></video>
+    <video
+      id="videonew"
+      loop="true"
+      crossorigin="anonymous"
+      src="assets/video2.mp4"
+    ></video>
+    <video
+      id="videosample"
+      loop="true"
+      crossorigin="anonymous"
+      src="assets/Coffee Maker.mp4"
+    ></video>
+  </a-assets>
+  <a-marker
+    type="pattern"
+    url="assets/pattern-IOT_AR_1.patt"
+    vidhandler="video: #vid"
+  >
+    <a-video src="#vid" width="3" height="1.75" rotation="270 0 0"></a-video>
+  </a-marker>
+
+  <a-marker
+    type="pattern"
+    url="assets/pattern-IOT_AR_2.patt"
+    vidhandler="video: #videonew"
+  >
+    <a-video
+      src="#videonew"
+      width="3"
+      height="1.75"
+      rotation="270 0 0"
+    ></a-video>
+  </a-marker>
+
+  <a-marker
+  type="pattern"
+  url="assets/pattern-coffee maker.patt"
+  vidhandler="video: #videonew"
+>
+  <a-video
+    src="#videosample"
+    width="3.75"
+    height="2.2"
+    rotation="270 0 0"
+  ></a-video>
+</a-marker>
+  <a-entity camera></a-entity>
+</a-scene>
+<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+<script>
+  AFRAME.registerComponent("vidhandler", {
+    schema: {
+      video: { type: "selector" },
+    },
+    init: function () {
+      this.video = this.data.video;
+      this.video.pause();
+    },
+    tick: function () {
+      if (this.el.object3D.visible == true) {
+        if (!this.toggle) {
+          this.toggle = true;
+          this.video.play();
+        }
+      } else {
+        this.toggle = false;
+        this.video.pause();
+      }
+    },
+  });
+</script>
+<a-scene embedded arjs="debugUIEnabled: false;">
+  <a-assets>
+    <video
+      id="vid"
+      loop="true"
+      crossorigin="anonymous"
+      src="assets/video1.mp4"
+    ></video>
+    <video
+      id="videonew"
+      loop="true"
+      crossorigin="anonymous"
+      src="assets/video2.mp4"
+    ></video>
+    <video
+      id="videosample"
+      loop="true"
+      crossorigin="anonymous"
+      src="assets/Coffee Maker.mp4"
+    ></video>
+  </a-assets>
+  <a-marker
+    type="pattern"
+    url="assets/pattern-IOT_AR_1.patt"
+    vidhandler="video: #vid"
+  >
+    <a-video src="#vid" width="3" height="1.75" rotation="270 0 0"></a-video>
+  </a-marker>
+
+  <a-marker
+    type="pattern"
+    url="assets/pattern-IOT_AR_2.patt"
+    vidhandler="video: #videonew"
+  >
+    <a-video
+      src="#videonew"
+      width="3"
+      height="1.75"
+      rotation="270 0 0"
+    ></a-video>
+  </a-marker>
+
+  <a-marker
+  type="pattern"
+  url="assets/pattern-coffee maker.patt"
+  vidhandler="video: #videonew"
+>
+  <a-video
+    src="#videosample"
+    width="3.75"
+    height="2.2"
+    rotation="270 0 0"
+  ></a-video>
+</a-marker>
+  <a-entity camera></a-entity>
+</a-scene>
+>
   <a-assets>
     <video
       id="vid"
