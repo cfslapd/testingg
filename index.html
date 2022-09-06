@@ -29,7 +29,7 @@ AFRAME.registerComponent('vidhandler', {
                src='assets/video1.mp4'></video>
         <video id="videonew" loop="true" crossorigin="anonymous" 
                src='assets/video2.mp4'></video>
-        <video id="coffee" loop="true" crossorigin="anonymous" 
+        <video id="cofmak" loop="true" crossorigin="anonymous" 
                src='assets/video3.mp4'></video>
 
       </a-assets>
@@ -41,8 +41,8 @@ AFRAME.registerComponent('vidhandler', {
         <a-video src="#videonew" width="4" height="2.25" rotation="270 0 0"></a-video>
       </a-marker>
 
-      <a-marker type='pattern' url='assets/coffee_v2.patt' vidhandler="video:#coffee">
-        <a-video src="#coffee" width="4" height="2.25" rotation="270 0 0"></a-video>
+      <a-marker type='pattern' url='assets/marker.patt' vidhandler="video:#cofmak">
+        <a-video src="#cofmak" width="4" height="2.25" rotation="270 0 0"></a-video>
       </a-marker>
 
     
