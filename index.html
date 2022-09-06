@@ -26,6 +26,7 @@
     </head>
 
     <body style="margin: 0; overflow: hidden;">
+        
         <a-scene
             vr-mode-ui="enabled: false"
             loading-screen="enabled: false;"
@@ -34,11 +35,8 @@
             embedded
             gesture-detector
         >
-            <a-assets>
-                <video
-                    id="vid"
-                    src="assets/asset.mp4"
-                    preload="auto"
+      <a-assets>
+        <video id="vid" preload="auto"
                     response-type="arraybuffer"
                     loop
                     crossorigin
@@ -46,34 +44,61 @@
                     autoplay
                     muted
                     playsinline
-                ></video>
-            </a-assets>
+               src='assets/video1.mp4'></video>
+        <video id="videonew" preload="auto"
+                    response-type="arraybuffer"
+                    loop
+                    crossorigin
+                    webkit-playsinline
+                    autoplay
+                    muted
+                    playsinline
+               src='assets/video2.mp4'></video>
+        <video id="cofmak" preload="auto"
+                    response-type="arraybuffer"
+                    loop
+                    crossorigin
+                    webkit-playsinline
+                    autoplay
+                    muted
+                    playsinline
+               src='assets/video3.mp4'></video>
 
-            <a-marker
-                type="pattern"
-                preset="custom"
-                url="assets/marker.patt"
-                videohandler
-                smooth="true"
+      </a-assets>
+      <a-marker type='pattern' url='assets/pattern-IOT_AR_1.patt' vidhandler="video:#vid"smooth="true"
                 smoothCount="10"
                 smoothTolerance="0.01"
                 smoothThreshold="5"
                 raycaster="objects: .clickable"
                 emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
-            >
-                <a-video
-                    src="#vid"
-                    scale="1 1 1"
-                    position="0 0.1 0"
-                    rotation="-90 0 0"
-                    class="clickable"
-                    gesture-handler
-                ></a-video>
-            </a-marker>
+                cursor="fuse: false; rayOrigin: mouse;">
+        <a-video src="#vid" width="4" height="2.25" rotation="270 0 0" ></a-video>
+      </a-marker>
+  
+      <a-marker type='pattern' url='assets/pattern-IOT_AR_2.patt' vidhandler="video:#videonew" smooth="true"
+                smoothCount="10"
+                smoothTolerance="0.01"
+                smoothThreshold="5"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;">
+        <a-video src="#videonew" width="4" height="2.25" rotation="270 0 0"></a-video>
+      </a-marker>
 
-            <a-entity camera></a-entity>
-        </a-scene>
-    </body>
+      <a-marker type='pattern' url='assets/pattern-cm-marker.patt' vidhandler="video:#cofmak" smooth="true"
+                smoothCount="10"
+                smoothTolerance="0.01"
+                smoothThreshold="5"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;">
+        <a-video src="#cofmak" width="4" height="2.25" rotation="270 0 0"></a-video>
+      </a-marker>
+
+    
+      <a-entity camera></a-entity>
+    
+
+</a-scene>
+</body>
 </html>
