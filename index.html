@@ -39,7 +39,7 @@ AFRAME.registerComponent('vidhandler', {
 });
 </script>
 
-<a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+<a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;'>
       <a-assets>
         <video id="vid" loop="true" crossorigin="anonymous" 
                src='assets/video1.mp4'></video>
@@ -47,24 +47,23 @@ AFRAME.registerComponent('vidhandler', {
                src='assets/video2.mp4'></video>
                <video id="coffee" loop="true" crossorigin="anonymous" 
                src='assets/video3.mp4'></video>
+
       </a-assets>
       <a-marker type='pattern' url='assets/pattern-IOT_AR_1.patt' vidhandler="video: #vid">
-        <a-video src="#vid" width="3" height="1.75" rotation="270 0 0"></a-video>
+        <a-video src="#vid" width="4" height="2" rotation="270 0 0"></a-video>
       </a-marker>
   
       <a-marker type='pattern' url='assets/pattern-IOT_AR_2.patt' vidhandler="video: #videonew">
-        <a-video src="#videonew" width="3" height="1.75" rotation="270 0 0"></a-video>
+        <a-video src="#videonew" width="4" height="2" rotation="270 0 0"></a-video>
       </a-marker>
 
-      <a-marker type='pattern' url='assets/coffee.patt' vidhandler="video: #coffee">
-        <a-video src="#coffee" width="3" height="1.75" rotation="270 0 0"></a-video>
+      <a-marker type='pattern' url='assets/coffee_v2.patt' vidhandler="video: #coffee">
+        <a-video src="#coffee" width="4" height="2" rotation="270 0 0"></a-video>
       </a-marker>
 
     
       <a-entity camera>
-        <div class="mail-custom-btn"></div>
-        <div class="mail-custom-btn" style="padding: 0;padding-top: 0%;text-align: center;padding-bottom: 10px;"><a class="custom-btn light-btn" href="#" role="button"><i class="fa fa-arrow-circle-left"></i></a><a class="custom-btn light-btn" href="#" role="button"><i class="fa fa-pause-circle"></i></a><a class="custom-btn light-btn" href="#" role="button"><i class="fa fa-play-circle"></i></a><a class="custom-btn light-btn" href="#" role="button"><i class="fa fa-stop-circle"></i></a><a class="custom-btn light-btn" href="#" role="button"><i class="fa fa-arrow-circle-right"></i></a></div>
-      
+       
       </a-entity>
 
 </a-scene>
