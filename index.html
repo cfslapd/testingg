@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/custom-buttons.css">
+    <link rel="stylesheet" href="assets/css/html5-video.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
 <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
 <script>
@@ -22,25 +38,36 @@ AFRAME.registerComponent('vidhandler', {
     }
 });
 </script>
-<a-scene embedded arjs="debugUIEnabled: false;">
+
+<a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
       <a-assets>
-        <video id="vid1" loop="true" crossorigin="anonymous" 
+        <video id="vid" loop="true" crossorigin="anonymous" 
                src='assets/video1.mp4'></video>
-        <video id="vid2" loop="true" crossorigin="anonymous" 
+        <video id="videonew" loop="true" crossorigin="anonymous" 
                src='assets/video2.mp4'></video>
-        <video id="vid3" loop="true" crossorigin="anonymous" 
-               src='assets/video3.mp4'></video>
       </a-assets>
-      <a-marker type='pattern' url='assets/pattern-IOT_AR_1.patt' vidhandler="video: #vid1">
-        <a-video src="#vid1" width="3" height="1.75" rotation="270 0 0"></a-video>
+      <a-marker type='pattern' url='assets/pattern-IOT_AR_1.patt' vidhandler="video: #vid">
+        <a-video src="#vid" width="3" height="1.75" rotation="270 0 0"></a-video>
       </a-marker>
   
-      <a-marker type='pattern' url='assets/pattern-IOT_AR_2.patt' vidhandler="video: #vid2">
-        <a-video src="#vid2" width="3" height="1.75" rotation="270 0 0"></a-video>
+      <a-marker type='pattern' url='assets/pattern-IOT_AR_2.patt' vidhandler="video: #videonew">
+        <a-video src="#videonew" width="3" height="1.75" rotation="270 0 0"></a-video>
       </a-marker>
 
-      <a-marker type='pattern' url='assets/pattern-IOT_AR_3.patt' vidhandler="video: #vid3">
-        <a-video src="#vid3" width="3" height="1.75" rotation="270 0 0"></a-video>
+      <a-marker type='pattern' url='assets/pattern-IOT_AR_3.patt' vidhandler="video: #coffee">
+        <a-video src="#coffee" width="3" height="1.75" rotation="270 0 0"></a-video>
       </a-marker>
-  <a-entity camera></a-entity>
+
+    
+  <a-entity camera>
+    <div class="a-upload-model"><input class="a-upload-model-input"><button class="a-upload-model-button">OPEN MODEL</button></div>
+    <div class="mail-custom-btn"></div>
+    <div class="mail-custom-btn" style="padding: 0;padding-top: 0%;text-align: center;padding-bottom: 10px;"><a class="custom-btn light-btn" href="#" role="button"><i class="fa fa-arrow-circle-left"></i></a><a class="custom-btn light-btn" href="#" role="button"><i class="fa fa-pause-circle"></i></a><a class="custom-btn light-btn" href="#" role="button"><i class="fa fa-play-circle"></i></a><a class="custom-btn light-btn" href="#" role="button"><i class="fa fa-stop-circle"></i></a><a class="custom-btn light-btn" href="#" role="button"><i class="fa fa-arrow-circle-right"></i></a></div>
+  
+  </a-entity>
+
 </a-scene>
+
+</body>
+
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
