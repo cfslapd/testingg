@@ -39,36 +39,15 @@
             embedded
             gesture-detector
         >
-      <a-assets>
-        <video id="vid" preload="auto"
-                    response-type="arraybuffer"
-                    loop
-                    crossorigin
-                    webkit-playsinline
-                    autoplay
-                    muted
-                    playsinline
-               src='assets/video1.mp4'></video>
-        <video id="videonew" preload="auto"
-                    response-type="arraybuffer"
-                    loop
-                    crossorigin
-                    webkit-playsinline
-                    autoplay
-                    muted
-                    playsinline
-               src='assets/video2.mp4'></video>
-        <video id="cofmak" preload="auto"
-                    response-type="arraybuffer"
-                    loop
-                    crossorigin
-                    webkit-playsinline
-                    autoplay
-                    muted
-                    playsinline
-               src='assets/video3.mp4'></video>
-
-      </a-assets>
+        <a-assets>
+          <video id="vid" loop="true" crossorigin="anonymous" 
+                 src='assets/video1.mp4'></video>
+          <video id="videonew" loop="true" crossorigin="anonymous" 
+                 src='assets/video2.mp4'></video>
+          <video id="cofmak" loop="true" crossorigin="anonymous" 
+                 src='assets/video3.mp4'></video>
+  
+        </a-assets>
       <a-marker type='pattern' url='assets/pattern-IOT_AR_1.patt' vidhandler="video:#vid"smooth="true"
                 smoothCount="10"
                 smoothTolerance="0.01"
